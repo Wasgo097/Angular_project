@@ -1,0 +1,13 @@
+<button (click)=table() type="button">Tabelka</button>
+<button (click)=tiless() type="button">Kafelki</button>
+<p>
+    <span id="mess">
+        Nie wybrano elementu
+    </span>
+</p>
+<div *ngIf="tiles==false">
+    <app-table (info)=getinfo($event)></app-table>
+</div>
+<div *ngIf="tiles==true">
+    <app-tile (info)=getinfo($event)></app-tile>
+</div>
