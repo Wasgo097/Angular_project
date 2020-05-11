@@ -1,6 +1,5 @@
 import { Component, OnInit, Output,EventEmitter } from '@angular/core';
-import { Hero } from '../viev/viev.component';
-import {VievComponent} from '../viev/viev.component'; 
+import { Hero } from '../hero';
 import { HeroService } from '../service/serv.service';
 @Component({
   selector: 'app-table',

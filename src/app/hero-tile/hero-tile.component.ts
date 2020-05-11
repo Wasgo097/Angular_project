@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Hero } from '../viev/viev.component';
+import { Hero } from '../hero';
 @Component({
   selector: 'app-hero-tile',
   templateUrl: './hero-tile.component.html',

@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { Hero } from '../viev/viev.component';
+import { Hero } from '../hero';
 import { VievComponent } from '../viev/viev.component';
 import { HeroService } from '../service/serv.service';
 @Component({
