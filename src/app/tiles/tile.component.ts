@@ -1,6 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Hero } from '../hero';
-import { VievComponent } from '../viev/viev.component';
+//import { VievComponent } from '../viev/viev.component';
 import { HeroService } from '../service/serv.service';
 @Component({
   selector: 'app-tile',
@@ -17,5 +17,8 @@ export class TileComponent implements OnInit {
    }
   send(str: string) {
     this.info.emit(str);
+  }
+  description(her:Hero): string {
+    return "Id : " + her.id + " | Nick: " + her.nick + " | Profesja: " + her.prof;
   }
 }

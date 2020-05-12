@@ -9,7 +9,4 @@ export class Hero {
       this.img = img;
       this.prof = prof;
     }
-    description(): string {
-      return "Id : " + this.id + " | Nick: " + this.nick + " | Profesja: " + this.prof;
-    }
   }

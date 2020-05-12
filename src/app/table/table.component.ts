@@ -17,4 +17,7 @@ export class TableComponent implements OnInit {
   send(str:string){
     this.info.emit(str);
   }
+  description(her:Hero): string {
+    return "Id : " + her.id + " | Nick: " + her.nick + " | Profesja: " + her.prof;
+  }
 }
