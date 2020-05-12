@@ -8,12 +8,13 @@ import { HeroService } from '../service/serv.service';
   styleUrls: ['./tile.component.css']
 })
 export class TileComponent implements OnInit {
-  public heroes:Hero[];
+  public heroes:Hero[]=[];
   @Output()
   public info = new EventEmitter<string>();
-  constructor(private viev:HeroService) { }
+  constructor(private service:HeroService) { }
   ngOnInit(): void {
-    this.viev.cast.subscribe(her=>this.heroes=her);
+    //this.viev.cast.subscribe(her=>this.heroes=her);
+    this.service.getHeroes().subscribe(her=>this.heroes=her);
    }
   send(str: string) {
     this.info.emit(str);

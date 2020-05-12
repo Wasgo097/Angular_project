@@ -7,12 +7,13 @@ import { HeroService } from '../service/serv.service';
   styleUrls: ['./table.component.css']
 })
 export class TableComponent implements OnInit {
-  public heroes:Hero[];
+  public heroes:Hero[]=[];
   @Output()
   public info=new EventEmitter<string>();
-  constructor(private viev:HeroService) { }
+  constructor(private service:HeroService) { }
   ngOnInit(): void {
-    this.viev.cast.subscribe(her=>this.heroes=her);
+    //this.service.cast.subscribe(her=>this.heroes=her);
+    this.service.getHeroes().subscribe(her=>this.heroes=her);
   }
   send(str:string){
     this.info.emit(str);
