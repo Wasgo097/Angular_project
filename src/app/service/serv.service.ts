@@ -18,18 +18,18 @@ export class HeroService {
   //public cast = this.getHeroes();
   constructor(private _http:HttpClient) { }
   public getHeroes():Observable<Hero[]>{
-    return this._http.get<Hero[]>(this.url+'hero/');
+    return this._http.get<Hero[]>(this.url+'heroes/');
   }
   public getHero(id:number):Observable<Hero>{
-    return this._http.get<Hero>(this.url+'hero/'+id);
+    return this._http.get<Hero>(this.url+'heroes/'+id);
   }
   public addHero(hero:Hero):Observable<void>{
-    return this._http.post<void>(this.url+'hero/',hero);
+    return this._http.post<void>(this.url+'heroes/',hero);
   }
   public updateMovie(id: number, hero:Hero): Observable<void> {
-    return this._http.put<void>(this.url + 'hero/' + id, hero);
+    return this._http.put<void>(this.url + 'heroes/' + id, hero);
   }
   public deleteMovie(id: number): Observable<void> {
-    return this._http.delete<void>(this.url + 'hero/' + id);
+    return this._http.delete<void>(this.url + 'heroes/' + id);
   }
 }

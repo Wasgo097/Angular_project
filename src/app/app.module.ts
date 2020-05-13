@@ -8,13 +8,15 @@ import { VievComponent } from './viev/viev.component';
 import { HeroTileComponent } from './hero-tile/hero-tile.component';
 import { HeroService } from './service/serv.service';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { OneHeroComponent } from './one-hero/one-hero.component';
 @NgModule({
   declarations: [
     AppComponent,
     TableComponent,
     TileComponent,
     VievComponent,
-    HeroTileComponent
+    HeroTileComponent,
+    OneHeroComponent
   ],
   imports: [
     BrowserModule,
