@@ -1,0 +1,20 @@
+<button value="Strona Główna" routerLink="">Strona Główna</button>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div>
+        ID
+        <input id="id" type="number" formControlName="id">
+    </div>
+    <div>
+        Nick
+        <input id="nick" type="text" formControlName="nick">
+    </div>
+    <div>
+        IMG
+        <input id="img" type="text" formControlName="img">
+    </div>
+    <div>
+        Profesja
+        <input id="prof" type="text" formControlName="prof"> 
+    </div>
+    <button type="submit">Dodaj</button>
+</form>

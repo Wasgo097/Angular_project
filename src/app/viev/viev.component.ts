@@ -18,4 +18,7 @@ export class VievComponent implements OnInit {
   getinfo(str: string) {
     document.getElementById("mess").textContent = str;
   }
+  new_hero(){
+    
+  }
 }

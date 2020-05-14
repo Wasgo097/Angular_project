@@ -1,3 +1,3 @@
-<span *ngFor="let her of heroes, let i=index" (click)=send(description(her)) [routerLink]="['/heroes', her.id]">
+<span *ngFor="let her of heroes, let i=index" [routerLink]="['/heroes', her.id]">
     <app-hero-tile [hero]=her id="tile"></app-hero-tile>
 </span>

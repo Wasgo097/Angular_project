@@ -4,7 +4,7 @@
         <th class="row_h">Nick</th>
         <th class="row_h">Profesja</th>
     </tr>
-    <tr *ngFor="let her of heroes" (click)=send(description(her)) class="row" [routerLink]="['/heroes', her.id]">
+    <tr *ngFor="let her of heroes" class="row" [routerLink]="['/heroes', her.id]">
         <th class="row"><img [src]=her.img></th>
         <th class="row">{{her.nick}}</th>
         <th class="row">{{her.prof}}</th>

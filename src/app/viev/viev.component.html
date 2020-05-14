@@ -1,9 +1,10 @@
-<button (click)=table() type="button">Tabelka</button>
-<button (click)=tiless() type="button">Kafelki</button>
+<button (click)=table() type="button" class="btn">Tabelka</button>
+<button (click)=tiless() type="button" class="btn">Kafelki</button>
+<button routerLink="/new_hero" type="button" class="btn">Nowa postać</button>
 <p>
-    <span id="mess">
+    <!-- <span id="mess">
         Nie wybrano elementu
-    </span>
+    </span> -->
 </p>
 <div *ngIf="tiles==false">
     <app-table (info)=getinfo($event)></app-table>

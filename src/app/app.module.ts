@@ -9,6 +9,9 @@ import { HeroTileComponent } from './hero-tile/hero-tile.component';
 import { HeroService } from './service/serv.service';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { OneHeroComponent } from './one-hero/one-hero.component';
+import { NewHeroComponent } from './new-hero/new-hero.component';
+import { EditHeroComponent } from './edit-hero/edit-hero.component';
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,12 +19,15 @@ import { OneHeroComponent } from './one-hero/one-hero.component';
     TileComponent,
     VievComponent,
     HeroTileComponent,
-    OneHeroComponent
+    OneHeroComponent,
+    NewHeroComponent,
+    EditHeroComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
   ],
   providers: [HeroService],
   bootstrap: [AppComponent]
