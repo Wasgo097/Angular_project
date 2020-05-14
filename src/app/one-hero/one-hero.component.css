@@ -1,4 +1,4 @@
-#hero{
+#heroo{
     background-color: yellowgreen;
     border-style: solid;
     border-width: 2px;
@@ -9,6 +9,6 @@
     width: 20%;
     margin-top: 10px;
 }
-#hero:hover{
+#heroo:hover{
     background-color:yellow;
 }

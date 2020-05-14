@@ -1,1 +1,21 @@
-<p>edit-hero works!</p>
+<button value="Strona Główna" routerLink="">Strona Główna</button>
+Edycja
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div>
+        ID
+        <input id="id" type="number" formControlName="id" value="5">
+    </div>
+    <div>
+        Nick
+        <input id="nick" type="text" formControlName="nick">
+    </div>
+    <div>
+        IMG
+        <input id="img" type="text" formControlName="img">
+    </div>
+    <div>
+        Profesja
+        <input id="prof" type="text" formControlName="prof"> 
+    </div>
+    <button type="submit">Edytuj</button>
+</form>
