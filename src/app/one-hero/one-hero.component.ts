@@ -16,5 +16,4 @@ export class OneHeroComponent implements OnInit {
     this.route.paramMap.subscribe(params => {this.id = +params.get('id');});
     this.service.getHero(this.id).subscribe(hero=>{this.hero=hero;this.load=true;});
   }
-
 }
