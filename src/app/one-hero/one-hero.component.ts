@@ -10,10 +10,11 @@ import { HeroService } from '../service/serv.service';
 export class OneHeroComponent implements OnInit {
   private id:number;
   public hero:Hero;
+  public load:boolean=false;
   constructor(private route: ActivatedRoute,private service:HeroService) { }
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {this.id = +params.get('id');});
-    this.service.getHero(this.id).subscribe(hero=>this.hero=hero);
+    this.service.getHero(this.id).subscribe(hero=>{this.hero=hero;this.load=true;});
   }
 
 }

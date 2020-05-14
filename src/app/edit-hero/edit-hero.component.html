@@ -3,19 +3,19 @@ Edycja
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
     <div>
         ID
-        <input id="id" type="number" formControlName="id" value="5">
+        <input id="id" type="number" formControlName="id" value="{{hero?.id}}">
     </div>
     <div>
         Nick
-        <input id="nick" type="text" formControlName="nick">
+        <input id="nick" type="text" formControlName="nick" value="{{hero?.nick}}">
     </div>
     <div>
         IMG
-        <input id="img" type="text" formControlName="img">
+        <input id="img" type="text" formControlName="img" value="{{hero?.img}}">
     </div>
     <div>
         Profesja
-        <input id="prof" type="text" formControlName="prof"> 
+        <input id="prof" type="text" formControlName="prof" value="{{hero?.prof}}"> 
     </div>
     <button type="submit">Edytuj</button>
 </form>
