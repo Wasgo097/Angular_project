@@ -21,4 +21,7 @@ export class TableComponent implements OnInit {
   description(her:Hero): string {
     return "Id : " + her.id + " | Nick: " + her.nick + " | Profesja: " + her.prof;
   }
+  delete(){
+console.log("usun");
+  }
 }

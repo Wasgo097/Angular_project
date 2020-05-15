@@ -3,7 +3,7 @@ Edycja
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
     <div>
         ID
-        <input id="id" type="number" formControlName="id" value="{{hero?.id}}">
+        <input id="id" type="number" formControlName="id" value="{{hero?.id}}" readonly>
     </div>
     <div>
         Nick
