@@ -4,12 +4,14 @@ import { VievComponent } from './viev/viev.component';
 import { OneHeroComponent } from './one-hero/one-hero.component';
 import { NewHeroComponent } from './new-hero/new-hero.component';
 import { EditHeroComponent } from './edit-hero/edit-hero.component';
+import { DeleteHeroComponent } from './delete-hero/delete-hero.component';
 const routes: Routes = [
   {path:'',redirectTo:'/heroes',pathMatch:'full'},
   {path:'heroes/:id',component:OneHeroComponent},
   {path:'heroes',component:VievComponent},
   {path:'new_hero',component:NewHeroComponent},
-  {path:'edit_hero/:id',component:EditHeroComponent}
+  {path:'edit_hero/:id',component:EditHeroComponent},
+  {path:'delete_hero/:id',component:DeleteHeroComponent},
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

@@ -12,7 +12,4 @@ export class HeroTileComponent implements OnInit {
   constructor(private service:HeroService) { }
   ngOnInit(): void {
   }
-  delete(){
-console.log("usun");
-  }
 }

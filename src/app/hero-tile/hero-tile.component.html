@@ -3,6 +3,6 @@
     <p><img [src]=hero.img></p>
     <p>Nick: {{hero.nick}}</p>
     <p>Profesja: {{hero.prof}}</p>
-    <button click="delete()">Usun</button>
+    <button [routerLink]="['/delete_hero', hero.id]">Usun</button>
 </div>    
 </body>

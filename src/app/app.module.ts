@@ -12,6 +12,7 @@ import { OneHeroComponent } from './one-hero/one-hero.component';
 import { NewHeroComponent } from './new-hero/new-hero.component';
 import { EditHeroComponent } from './edit-hero/edit-hero.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { DeleteHeroComponent } from './delete-hero/delete-hero.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +22,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     HeroTileComponent,
     OneHeroComponent,
     NewHeroComponent,
-    EditHeroComponent
+    EditHeroComponent,
+    DeleteHeroComponent
   ],
   imports: [
     BrowserModule,
