@@ -30,7 +30,11 @@ export class EditHeroComponent implements OnInit {
   }
   onSubmit() {
     let newHero = this.form.value as Hero;
-    console.log("eydjca");
+    console.log("Edycja");
+    if(newHero.id==null)newHero.id=this.hero.id;
+    if(newHero.nick==null)newHero.nick=this.hero.nick;
+    if(newHero.img==null)newHero.img=this.hero.img;
+    if(newHero.prof==null)newHero.prof=this.hero.prof;
     console.log(newHero);
     this.service.updateHero(this.id, newHero).subscribe(result=>{console.log(result)});
   }
