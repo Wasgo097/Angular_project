@@ -21,8 +21,8 @@ export class NewHeroComponent implements OnInit {
   }
   onSubmit(){
     let newHero=this.form.value as Hero;
-    let temp=newHero.img;
-    newHero.img="../../assets/"+temp;
+    //let temp=newHero.img;
+    //newHero.img="../../assets/"+temp;
     this.service.addHero(newHero).subscribe(result=>{console.log(result)});
     console.log(newHero);
   }
