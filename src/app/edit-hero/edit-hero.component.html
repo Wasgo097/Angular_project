@@ -1,21 +1,35 @@
-<button value="Strona Główna" routerLink="">Strona Główna</button>
+<button value="Strona Główna" routerLink="">Strona Główna</button><br>
 Edycja
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
     <div>
-        ID
+        <label for="id">ID</label>
         <input id="id" type="number" formControlName="id" value="{{hero?.id}}" readonly>
     </div>
     <div>
-        Nick
+        <label for="nick">Nick</label>
         <input id="nick" type="text" formControlName="nick" value="{{hero?.nick}}">
     </div>
     <div>
-        IMG
-        <input id="img" type="text" formControlName="img" value="{{hero?.img}}">
+        <label for="img">Avatar</label>
+        <select id="img" formControlName="img">
+            <option value="../../assets/av1.jpg">Avatar 1 Wojownik</option>
+            <option value="../../assets/av2.jpg">Avatar 2 Wojownik</option>
+            <option value="../../assets/av3.jpg">Avatar 3 Ninja</option>
+            <option value="../../assets/av4.jpg">Avatar 4 Sura</option>
+            <option value="../../assets/av5.jpg">Avatar 5 Sura</option>
+            <option value="../../assets/av6.jpg">Avatar 6 Szaman</option>
+            <option value="../../assets/av7.jpg">Avatar 7 Wojownik</option>
+            <option value="../../assets/av8.jpg">Avatar 8 Sura</option>
+        </select>
     </div>
     <div>
-        Profesja
-        <input id="prof" type="text" formControlName="prof" value="{{hero?.prof}}"> 
+        <label for="prof">Profesja</label>
+        <select id="prof" formControlName="prof">
+            <option value="Wojownik">Wojownik</option>
+            <option value="Sura">Sura</option>
+            <option value="Szaman">Szaman</option>
+            <option value="Ninja">Ninja</option>
+        </select> 
     </div>
-    <button type="submit">Edytuj</button>
+    <input type="submit" value="Dodaj"/>
 </form>
