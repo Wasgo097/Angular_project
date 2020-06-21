@@ -14,6 +14,11 @@ import { EditHeroComponent } from './edit-hero/edit-hero.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { DeleteHeroComponent } from './delete-hero/delete-hero.component';
 import { LoginComponent } from './login/login.component';
+import { JwtModule } from "angular-jwt";
+import { FormsModule }   from '@angular/forms';
+export function tokenGetter() {
+  return localStorage.getItem("jwt");
+}
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,6 +37,15 @@ import { LoginComponent } from './login/login.component';
     HttpClientModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    BrowserModule,
+    FormsModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: tokenGetter,
+        whitelistedDomains: ["localhost:5000"],
+        blacklistedRoutes: []
+      }
+    })
   ],
   providers: [HeroService],
   bootstrap: [AppComponent]
