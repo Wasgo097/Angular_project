@@ -16,6 +16,7 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
   login(form: NgForm) {
+    console.log(form);
     const credentials = JSON.stringify(form.value);
     this.http.post("https://localhost:44365/api/Authorization", credentials, {
       headers: new HttpHeaders({
@@ -26,7 +27,7 @@ export class LoginComponent implements OnInit {
       console.log(token);
       localStorage.setItem("jwt", token);
       this.invalidLogin = false;
-      this.router.navigate(["/"]);
+      this.router.navigate(["/heroes"]);
     }, err => {
       this.invalidLogin = true;
     });
