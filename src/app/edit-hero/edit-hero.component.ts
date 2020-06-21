@@ -15,10 +15,6 @@ export class EditHeroComponent implements OnInit {
   public hero?: Hero;
   constructor(private fb: FormBuilder, private route: ActivatedRoute, private service: HeroService) {
     this.form = this.fb.group({
-      // id: new FormControl(this.hero.id),
-      // nick: new FormControl(this.hero.nick),
-      // img: new FormControl(this.hero.img),
-      // prof: new FormControl(this.hero.prof)
       id: new FormControl(null),
       nick: new FormControl(null),
       img: new FormControl(null),

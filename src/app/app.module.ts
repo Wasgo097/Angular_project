@@ -13,6 +13,7 @@ import { NewHeroComponent } from './new-hero/new-hero.component';
 import { EditHeroComponent } from './edit-hero/edit-hero.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { DeleteHeroComponent } from './delete-hero/delete-hero.component';
+import { LoginComponent } from './login/login.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +24,8 @@ import { DeleteHeroComponent } from './delete-hero/delete-hero.component';
     OneHeroComponent,
     NewHeroComponent,
     EditHeroComponent,
-    DeleteHeroComponent
+    DeleteHeroComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

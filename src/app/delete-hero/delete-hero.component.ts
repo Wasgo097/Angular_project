@@ -12,7 +12,6 @@ export class DeleteHeroComponent implements OnInit {
   constructor(private route: ActivatedRoute,private service:HeroService) { }
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {this.id = +params.get('id');});
-    //this.service.getHero(this.id).subscribe(hero=>{this.hero=hero;this.load=true;});
     this.service.deleteHero(this.id).subscribe(result=>this.success=result);
   }
 }
