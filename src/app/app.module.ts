@@ -14,7 +14,7 @@ import { EditHeroComponent } from './edit-hero/edit-hero.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { DeleteHeroComponent } from './delete-hero/delete-hero.component';
 import { LoginComponent } from './login/login.component';
-import { JwtModule } from "angular-jwt";
+import { JwtModule } from '@auth0/angular-jwt';
 import { FormsModule }   from '@angular/forms';
 export function tokenGetter() {
   return localStorage.getItem("jwt");
