@@ -5,8 +5,10 @@ import { OneHeroComponent } from './one-hero/one-hero.component';
 import { NewHeroComponent } from './new-hero/new-hero.component';
 import { EditHeroComponent } from './edit-hero/edit-hero.component';
 import { DeleteHeroComponent } from './delete-hero/delete-hero.component';
+import { LoginComponent } from './login/login.component';
 const routes: Routes = [
-  {path:'',redirectTo:'/heroes',pathMatch:'full'},
+  {path:'',redirectTo:'/login',pathMatch:'full'},
+  {path:'login',component:LoginComponent},
   {path:'heroes/:id',component:OneHeroComponent},
   {path:'heroes',component:VievComponent},
   {path:'new_hero',component:NewHeroComponent},
