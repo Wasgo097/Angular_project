@@ -9,14 +9,14 @@ import { FormsModule }   from '@angular/forms';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  invalidLogin: boolean;
+  invalidLogin: boolean=false;
 
   constructor(private http:HttpClient,private router:Router) { }
 
   ngOnInit(): void {
   }
   login(form: NgForm) {
-    console.log(form);
+    //console.log(form);
     const credentials = JSON.stringify(form.value);
     this.http.post("https://localhost:44365/api/Authorization", credentials, {
       headers: new HttpHeaders({
@@ -24,8 +24,10 @@ export class LoginComponent implements OnInit {
       })
     }).subscribe(response => {
       const token = (<any>response).token;
-      console.log(token);
+      const role=(<any>response).role;
+      //console.log(token);
       localStorage.setItem("jwt", token);
+      localStorage.setItem("role",role);
       this.invalidLogin = false;
       this.router.navigate(["/heroes"]);
     }, err => {

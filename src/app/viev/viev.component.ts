@@ -21,8 +21,10 @@ export class VievComponent implements OnInit {
     document.getElementById("mess").textContent = str;
   }
   isUserAuthenticated() {
+    console.log("autoryzacja");
     const token: string = localStorage.getItem("jwt");
     if (token && !this.jwtHelper.isTokenExpired(token)) {
+      console.log("true");
       return true;
     }
     else {
