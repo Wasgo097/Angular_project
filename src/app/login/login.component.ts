@@ -24,8 +24,9 @@ export class LoginComponent implements OnInit {
       })
     }).subscribe(response => {
       const token = (<any>response).token;
+      console.log(token);
       const role=(<any>response).role;
-      //console.log(token);
+      console.log(role);
       localStorage.setItem("jwt", token);
       localStorage.setItem("role",role);
       this.invalidLogin = false;
@@ -34,7 +35,4 @@ export class LoginComponent implements OnInit {
       this.invalidLogin = true;
     });
   }
-  logOut() {
-    localStorage.removeItem("jwt");
- }
 }
