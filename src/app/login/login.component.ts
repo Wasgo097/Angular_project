@@ -24,13 +24,14 @@ export class LoginComponent implements OnInit {
       })
     }).subscribe(response => {
       const token = (<any>response).token;
-      console.log(token);
       const role=(<any>response).role;
       console.log(role);
+      console.log(token);
       localStorage.setItem("jwt", token);
       localStorage.setItem("role",role);
       this.invalidLogin = false;
       this.router.navigate(["/heroes"]);
+      console.log("nawiguje");
     }, err => {
       this.invalidLogin = true;
     });

@@ -13,7 +13,7 @@ export class TileComponent implements OnInit {
   public info = new EventEmitter<string>();
   constructor(private service:HeroService) { }
   ngOnInit(): void {
-    //this.viev.cast.subscribe(her=>this.heroes=her);
+    console.log("zadanie");
     this.service.getHeroes().subscribe(her=>this.heroes=her);
    }
   send(str: string) {
