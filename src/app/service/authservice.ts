@@ -9,13 +9,18 @@ export class AuthService implements CanActivate {
   }
   canActivate() {
     const token = localStorage.getItem("jwt");
-    console.log("auth service "+token);
+    //onsole.log("auth service "+token);
     if (token && !this.jwtHelper.isTokenExpired(token)){
-      console.log("true");
+      //console.log("true");
       return true;
     }
-    console.log("false");
+    //console.log("false");
     this.router.navigate([""]);
     return false;
+  }
+  isAdmin(){
+    let role:string;
+    role=localStorage.getItem("role");
+    return role=="admin";
   }
 }
