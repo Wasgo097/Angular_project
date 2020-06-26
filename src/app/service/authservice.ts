@@ -9,7 +9,7 @@ export class AuthService implements CanActivate {
   }
   canActivate() {
     const token = localStorage.getItem("jwt");
-    //onsole.log("auth service "+token);
+    console.log("przejscie");
     if (token && !this.jwtHelper.isTokenExpired(token)){
       //console.log("true");
       return true;
@@ -19,8 +19,11 @@ export class AuthService implements CanActivate {
     return false;
   }
   isAdmin(){
-    let role:string;
-    role=localStorage.getItem("role");
-    return role=="admin";
+    const role=localStorage.getItem("role");
+    if(role=="admin"){
+        return true;
+    }
+    this.router.navigate(["/heroes"]);
+    return false;
   }
 }

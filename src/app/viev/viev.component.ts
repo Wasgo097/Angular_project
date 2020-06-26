@@ -1,6 +1,7 @@
 import { Component, OnInit, Injectable } from '@angular/core';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { Router } from '@angular/router';
+import { AuthService } from '../service/authservice';
 @Component({
   selector: 'app-viev',
   templateUrl: './viev.component.html',
@@ -8,9 +9,12 @@ import { Router } from '@angular/router';
 })
 @Injectable()
 export class VievComponent implements OnInit {
-  constructor(private jwtHelper: JwtHelperService, private router: Router) {}
-  ngOnInit(): void {}
+  constructor(private jwtHelper: JwtHelperService, private router: Router,private authservice:AuthService) {}
+  ngOnInit(): void {
+    this.role=this.authservice.isAdmin();
+  }
   tiles: boolean = true;
+  role:boolean;
   table() {
     this.tiles = false;
   }
@@ -21,10 +25,10 @@ export class VievComponent implements OnInit {
     document.getElementById("mess").textContent = str;
   }
   isUserAuthenticated() {
-    console.log("autoryzacja");
+    //console.log("autoryzacja");
     const token: string = localStorage.getItem("jwt");
     if (token && !this.jwtHelper.isTokenExpired(token)) {
-      console.log("true");
+      //console.log("true");
       return true;
     }
     else {

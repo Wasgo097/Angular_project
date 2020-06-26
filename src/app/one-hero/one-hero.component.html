@@ -4,6 +4,6 @@
         <p><img [src]=hero.img></p>
         <p>Nick: {{hero.nick}}</p>
         <p>Profesja: {{hero.prof}}</p>
-        <button value="Edytuj Bohatera"[routerLink]="['/edit_hero', hero.id]">Edycja Bohatera</button>
+        <button *ngIf="role" value="Edytuj Bohatera"[routerLink]="['/edit_hero', hero.id]">Edycja Bohatera</button>
     </div>
 </body>

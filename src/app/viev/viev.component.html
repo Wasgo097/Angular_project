@@ -1,7 +1,7 @@
 <button (click)=table() type="button" class="btn">Tabelka</button>
 <button (click)=tiless() type="button" class="btn">Kafelki</button>
 <button (click)=logOut() type="button" class="btn">Wyloguj</button>
-<button routerLink="/new_hero" type="button" class="btn">Nowa postać</button>
+<button *ngIf="role" routerLink="/new_hero" type="button" class="btn">Nowa postać</button>
 <p>
     <!-- <span id="mess">
         Nie wybrano elementu
