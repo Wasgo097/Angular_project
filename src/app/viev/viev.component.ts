@@ -33,5 +33,7 @@ export class VievComponent implements OnInit {
   }
   public logOut = () => {
     localStorage.removeItem("jwt");
+    localStorage.removeItem("role");
+    this.router.navigate([""]);
   }
 }
