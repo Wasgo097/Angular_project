@@ -2,6 +2,7 @@ import { Component, OnInit, Output,EventEmitter } from '@angular/core';
 import { Hero } from '../hero';
 import { HeroService } from '../service/serv.service';
 import { AuthService } from '../service/authservice';
+import { Csvexporter } from '../service/csvexporter';
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
@@ -12,7 +13,7 @@ export class TableComponent implements OnInit {
   public role:boolean;
   @Output()
   public info=new EventEmitter<string>();
-  constructor(private service:HeroService,private authservice:AuthService) { }
+  constructor(private service:HeroService,private authservice:AuthService,private exporter:Csvexporter) { }
   ngOnInit(): void {
     //this.service.cast.subscribe(her=>this.heroes=her);
     this.service.getHeroes().subscribe(her=>this.heroes=her);
@@ -23,5 +24,8 @@ export class TableComponent implements OnInit {
   }
   description(her:Hero): string {
     return "Id : " + her.id + " | Nick: " + her.nick + " | Profesja: " + her.prof;
+  }
+  downloadCSV(){
+    this.exporter.downloadCSV(this.heroes);
   }
 }
