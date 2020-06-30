@@ -17,6 +17,6 @@ export class OneHeroComponent implements OnInit {
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {this.id = +params.get('id');});
     this.service.getHero(this.id).subscribe(hero=>{this.hero=hero;this.load=true;});
-    this.role=this.authservice.isAdmin();
+    this.role=this.authservice.isAdminwithoutroute();
   }
 }

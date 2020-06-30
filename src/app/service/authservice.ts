@@ -19,11 +19,20 @@ export class AuthService implements CanActivate {
     return false;
   }
   isAdmin(){
+    console.log("admin");
     const role=localStorage.getItem("role");
     if(role=="admin"){
         return true;
     }
     this.router.navigate(["/heroes"]);
+    return false;
+  }
+  isAdminwithoutroute(){
+    console.log("admin wr");
+    const role=localStorage.getItem("role");
+    if(role=="admin"){
+        return true;
+    }
     return false;
   }
 }
