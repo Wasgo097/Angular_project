@@ -1,15 +1,22 @@
 import { Injectable } from '@angular/core';
 import { Hero } from '../hero';
 import { Observable } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
 export class HeroService {
   private url="https://localhost:44365/api/";
   constructor(private _http:HttpClient) { }
-  public getHeroes():Observable<Hero[]>{
-    return this._http.get<Hero[]>(this.url+'heroes');
+  public getHeroes(filters?: string, orderBy?: string):Observable<Hero[]>{
+    let params=new HttpParams();
+    if(filters){
+      params.append("filtr",filters);
+    }
+    if(orderBy){
+      params.append("sort",orderBy);
+    }
+    return this._http.get<Hero[]>(this.url+'heroes',{params: params});
   }
   public getHero(id:number):Observable<Hero>{
     return this._http.get<Hero>(this.url+'heroes/'+id);

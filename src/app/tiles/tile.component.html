@@ -1,4 +1,11 @@
 <button (click)="downloadCSV()" class="btn-default">Download CSV</button>
+<label for="sort">Sortuj:</label>
+<select name="Sortowanie" id="sort">
+  <option value="profasc">Profesja rosnąco</option>
+  <option value="profdesc">Profesja malejąco</option>
+  <option value="nickasc">Nick rosnąco</option>
+  <option value="nickdesc">Nick malejąco</option>
+</select>
 <br>
 <span *ngFor="let her of heroes, let i=index" [routerLink]="['/heroes', her.id]">
     <app-hero-tile [hero]=her id="tile"></app-hero-tile>
