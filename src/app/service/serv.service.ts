@@ -13,12 +13,12 @@ export class HeroService {
     console.log(filters);
     let params=new HttpParams();
     if(filters){
-      params.append("filtr",filters);
+      params=params.append("filtr",filters);
     }
     if(orderBy){
-      params.append("sort",orderBy);
+      params=params.append("sort",orderBy);
     }
-    return this._http.get<Hero[]>(this.url+'heroes',{params: params});
+    return this._http.get<Hero[]>(this.url+'heroes',{params:params});
   }
   public getHero(id:number):Observable<Hero>{
     return this._http.get<Hero>(this.url+'heroes/'+id);
