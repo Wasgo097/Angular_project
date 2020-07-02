@@ -1,4 +1,25 @@
 <button (click)="downloadCSV()" class="btn-default">Download CSV</button>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <span>
+      <label for="sort">Sortuj:</label>
+      <select name="Sortowanie" id="sort" formControlName="sort">
+        <option value="profasc">Profesja rosnąco</option>
+        <option value="profdesc">Profesja malejąco</option>
+        <option value="nickasc">Nick rosnąco</option>
+        <option value="nickdesc">Nick malejąco</option>
+      </select>
+    </span>
+    <span>
+      <label for="filtr">Filtruj</label>
+      <select name="Filtrowanie" id="filtr" formControlName="filtr">
+        <option value="Wojownik">Wojownik</option>
+        <option value="Sura">Sura</option>
+        <option value="Ninja">Ninja</option>
+        <option value="Szaman">Szaman</option>
+      </select>
+    </span>
+    <input type="submit" value="Sotruj i filtruj"/>
+  </form>
 <br>
 <table>
     <tr >

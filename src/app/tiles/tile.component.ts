@@ -22,7 +22,9 @@ export class TileComponent implements OnInit {
    }
   ngOnInit(): void {
     //console.log("zadanie");
-    this.service.getHeroes().subscribe(her=>this.heroes=her);
+    let sort=localStorage.getItem("sort");
+    let filtr=localStorage.getItem("filtr");
+    this.service.getHeroes(sort,filtr).subscribe(her=>this.heroes=her);
    }
   send(str: string) {
     this.info.emit(str);
@@ -34,6 +36,11 @@ export class TileComponent implements OnInit {
     this.exporter.downloadCSV(this.heroes);
   }
   onSubmit(){
-    console.log(this.form.controls['sort'].value);
+    console.log("sort i filtr");
+    let sort=this.form.controls['sort'].value;
+    let filtr=this.form.controls['filtr'].value;
+    localStorage.setItem("sort",sort);
+    localStorage.setItem("filtr",filtr);
+    this.service.getHeroes(filtr,sort).subscribe(her=>this.heroes=her);
   }
 }
