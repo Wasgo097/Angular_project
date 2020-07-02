@@ -3,16 +3,23 @@ import { Hero } from '../hero';
 //import { VievComponent } from '../viev/viev.component';
 import { HeroService } from '../service/serv.service';
 import { Csvexporter } from '../service/csvexporter';
+import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 @Component({
   selector: 'app-tile',
   templateUrl: './tile.component.html',
   styleUrls: ['./tile.component.css']
 })
 export class TileComponent implements OnInit {
+  public form: FormGroup
   public heroes:Hero[]=[];
   @Output()
   public info = new EventEmitter<string>();
-  constructor(private service:HeroService,private exporter:Csvexporter) { }
+  constructor(private fb: FormBuilder,private service:HeroService,private exporter:Csvexporter) {
+    this.form = this.fb.group({
+      sort: new FormControl(null),
+      filtr: new FormControl(null)
+    });
+   }
   ngOnInit(): void {
     //console.log("zadanie");
     this.service.getHeroes().subscribe(her=>this.heroes=her);
@@ -25,5 +32,8 @@ export class TileComponent implements OnInit {
   }
   downloadCSV(){
     this.exporter.downloadCSV(this.heroes);
+  }
+  onSubmit(){
+    console.log(this.form.controls['sort'].value);
   }
 }
