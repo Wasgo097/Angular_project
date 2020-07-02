@@ -43,4 +43,9 @@ export class TableComponent implements OnInit {
     localStorage.setItem("filtr",filtr);
     this.service.getHeroes(filtr,sort).subscribe(her=>this.heroes=her);
   }
+  public clear(){
+    localStorage.removeItem("sort");
+    localStorage.removeItem("filtr");
+    this.service.getHeroes().subscribe(her=>this.heroes=her);
+  }
 }

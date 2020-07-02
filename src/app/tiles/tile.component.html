@@ -18,8 +18,9 @@
       <option value="Szaman">Szaman</option>
     </select>
   </span>
-  <input type="submit" value="Sotruj i filtruj"/>
+  <input type="submit" value="Sotruj i filtruj"/> 
 </form>
+<button (click)=clear() type="button" class="btn">Czysc filtry i sortowanie</button>
 <br>
 <span *ngFor="let her of heroes, let i=index" [routerLink]="['/heroes', her.id]">
     <app-hero-tile [hero]=her id="tile"></app-hero-tile>
