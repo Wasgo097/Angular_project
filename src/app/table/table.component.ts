@@ -3,7 +3,7 @@ import { Hero } from '../hero';
 import { HeroService } from '../service/serv.service';
 import { AuthService } from '../service/authservice';
 import { Csvexporter } from '../service/csvexporter';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
@@ -15,7 +15,11 @@ export class TableComponent implements OnInit {
   public role:boolean;
   @Output()
   public info=new EventEmitter<string>();
-  constructor(private fb: FormBuilder,private service:HeroService,private authservice:AuthService,private exporter:Csvexporter) { }
+  constructor(private fb: FormBuilder,private service:HeroService,private authservice:AuthService,private exporter:Csvexporter) { 
+    this.form = this.fb.group({
+      sort: new FormControl(null),
+      filtr: new FormControl(null)
+    });}
   ngOnInit(): void {
     let sort=localStorage.getItem("sort");
     let filtr=localStorage.getItem("filtr");
@@ -32,7 +36,7 @@ export class TableComponent implements OnInit {
     this.exporter.downloadCSV(this.heroes);
   }
   onSubmit(){
-    console.log("sort i filtr");
+    //console.log("sort i filtr");
     let sort=this.form.controls['sort'].value;
     let filtr=this.form.controls['filtr'].value;
     localStorage.setItem("sort",sort);

@@ -9,6 +9,8 @@ export class HeroService {
   private url="https://localhost:44365/api/";
   constructor(private _http:HttpClient) { }
   public getHeroes(filters?: string, orderBy?: string):Observable<Hero[]>{
+    console.log(orderBy);
+    console.log(filters);
     let params=new HttpParams();
     if(filters){
       params.append("filtr",filters);

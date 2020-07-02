@@ -30,6 +30,8 @@ export class LoginComponent implements OnInit {
       localStorage.setItem("jwt", token);
       localStorage.setItem("role",role);
       this.invalidLogin = false;
+      localStorage.removeItem("sort");
+      localStorage.removeItem("filtr");
       this.router.navigate(["/heroes"]);
       //console.log("nawiguje");
     }, err => {

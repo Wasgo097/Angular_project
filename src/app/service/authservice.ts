@@ -9,7 +9,7 @@ export class AuthService implements CanActivate {
   }
   canActivate() {
     const token = localStorage.getItem("jwt");
-    console.log("przejscie");
+    //console.log("przejscie");
     if (token && !this.jwtHelper.isTokenExpired(token)){
       //console.log("true");
       return true;

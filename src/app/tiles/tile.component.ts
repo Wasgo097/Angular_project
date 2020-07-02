@@ -36,7 +36,7 @@ export class TileComponent implements OnInit {
     this.exporter.downloadCSV(this.heroes);
   }
   onSubmit(){
-    console.log("sort i filtr");
+    //console.log("sort i filtr");
     let sort=this.form.controls['sort'].value;
     let filtr=this.form.controls['filtr'].value;
     localStorage.setItem("sort",sort);
