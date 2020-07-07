@@ -44,6 +44,10 @@ export class TileComponent implements OnInit {
     this.service.getHeroes(filtr,sort).subscribe(her=>this.heroes=her);
   }
   public clear(){
+    this.form = this.fb.group({
+      sort: new FormControl(null),
+      filtr: new FormControl(null)
+    });
     localStorage.removeItem("sort");
     localStorage.removeItem("filtr");
     this.service.getHeroes().subscribe(her=>this.heroes=her);
